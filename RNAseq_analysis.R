@@ -25,4 +25,8 @@ library(RColorBrewer)
 setwd("~/Desktop/Abhilash/RNAseq_analysis/RNA_seq_results/")
 fs <- dir(,".txt$")
 
+names(fs) <- gsub(".txt","",fs)
+names(fs) <- gsub("__","_",names(fs))
+
+grp <- as.factor(gsub("_[1-3]","", names(fs)))
 
