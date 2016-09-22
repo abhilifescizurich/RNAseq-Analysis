@@ -28,5 +28,9 @@ fs <- dir(,".txt$")
 names(fs) <- gsub(".txt","",fs)
 names(fs) <- gsub("__","_",names(fs))
 
+#Create groups and donor list
+
 grp <- as.factor(gsub("_[1-3]","", names(fs)))
+donor <- as.factor(sapply(strsplit(names(fs),"_"),tail,1))
+
 
